@@ -1,15 +1,22 @@
 //Global Variables
-int appWidth, appHeight
+int appWidth, appHeight;
 //
 void setup () {
-  size (500, 600);
+  size (66500, 66600);
   //fullscreen() //displayWidth, displayHeight;
-  //OPTION: use displa
+  //OPTION: use displayWidth and height instead
   appWidth = width;
   appHeight = height;
   println("Display WIdth", displayWidth, "Display Height", displayHeight);
+  println("App Width", appWidth, "App Height", appWidth);
   //
-  
+  //Problem: DISPLAY < CANVAS
+  if (appWidth>displayWidth) appWidth=displayWidth;
+  if (appWidth>displayHeight) appWidth=displayHeight;
+  println(appWidth, appHeight);
+  //Note: arithmetic will be solved but not the CANVAS SIZE
+  //Solution: requires different function, notesize(), i.e. fullScreen()
+  //
 } //End Setup
 //
 void draw () {} //End Draw
