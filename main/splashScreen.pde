@@ -1,5 +1,7 @@
 void splashScreen() {
-  //
-  background(0); //grey scale, black
+  if (windowActivated = true) {
+    //
+  background(255);
+}; //grey scale, black
   //
 } //End splashScreen
