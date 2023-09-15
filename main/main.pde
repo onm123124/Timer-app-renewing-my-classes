@@ -1,28 +1,35 @@
 //Global Variables
 int appWidth, appHeight;
+boolean windowActivated = false;
 //
 void setup () {
-  size (66500, 66600);
-  //fullscreen() //displayWidth, displayHeight;
-  //OPTION: use displayWidth and height instead
+  size(500, 600);
+  //fullScreen(); //displayWidth, displayHeight
+  //OPTION: use displayWidth & height instead
   appWidth = width;
   appHeight = height;
-  println("Display WIdth", displayWidth, "Display Height", displayHeight);
-  println("App Width", appWidth, "App Height", appWidth);
+  println("Display Width", displayWidth, "Display Height", displayHeight);
+  println("App Width", appWidth, "App Height", appHeight);
   //
-  //Problem: DISPLAY < CANVAS
+  //Problem: Display < CANVAS
   if (appWidth>displayWidth) appWidth=displayWidth;
-  if (appWidth>displayHeight) appWidth=displayHeight;
+  if (appHeight>displayHeight) appHeight=displayHeight;
   println(appWidth, appHeight);
-  //Note: arithmetic will be solved but not the CANVAS SIZE
-  //Solution: requires different function, notesize(), i.e. fullScreen()
+  //Note: arithmetic will be solved but not the CANVAS size()
+  //Solution: requires different function, note size(), i.e. fullScreen()
   //
 } //End Setup
 //
-void draw () {} //End Draw
+void draw() {
+  if ( windowActivated == true ) splashScreen();
+} //End draw
 //
-void mousePressed () {} //End mousePressed
+void mousePressed() {
+  //fist mouse click, activates WINDOW
+  windowActivated = true;
+} //End mousePressed
 //
-void keyPressed () {} // End mousePressed
+void keyPressed( ) {
+}  //End keyPressed
 //
 //End MAIN Program
