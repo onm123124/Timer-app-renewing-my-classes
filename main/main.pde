@@ -24,8 +24,8 @@ void setup() {
   size(400, 700);
   appWidth = width;
   appHeight = height;
-  
- frameRate(1);
+
+  frameRate(1);
 
   //
   // Population of rect() variables
@@ -47,10 +47,10 @@ void draw() {
 
   int milliseconds = millis();
   s = milliseconds / 1000;
-  
+
   // Draw rectangles
   drawNumbers();
-  
+
   int h = hour();      // Get the current hour
   int m = minute();    // Get the current minute
   String ampm = "AM";  // Default to AM
@@ -153,7 +153,7 @@ void mousePressed() {
     } else if ( mouseX>x0 && mouseX<x0+widthSquare && mouseY>y3 && mouseY<y3+widthSquare ) {
       currentNumber = " "; // Clear all
     } else if ( mouseX>x2 && mouseX<x2+widthSquare && mouseY>y3 && mouseY<y3+widthSquare ) {
-     
+
       startTimer1 = true;
     } else if ( mouseX>x2 && mouseX<x2+widthSquare && mouseY>y3 && mouseY<y3+widthSquare ) {
       if (currentNumber.length() > 1) {
@@ -189,7 +189,8 @@ void startTimer() {
       try {
         int value = Integer.parseInt(num);
         totalTimerValue += value;
-      } catch (NumberFormatException e) {
+      }
+      catch (NumberFormatException e) {
         println("Invalid number: " + num);
       }
     }
