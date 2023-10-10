@@ -1,3 +1,4 @@
+
 /* Program Notes: Geometry is portrait (smaller width)
  Demonstrates num pad as Nested FOR Loops
  Start with width, then error-check height
