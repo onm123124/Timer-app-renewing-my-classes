@@ -19,12 +19,24 @@ int startTime= 0;// Start time of the timer in milliseconds
 float circleSize = 50; // Initial size of the circle
 boolean isCircleVisible = false; // Flag to track whether the circle should be visible
 int circleStartTime = 0; // Start time of the circle timer
+float picX, picY, picWidth, picHeight;
+PImage pic;
 
-
-void setup() {
+  void setup() {
   size(400, 700);
   appWidth = width;
   appHeight = height;
+
+  //imageCode
+  picX = appWidth*3/4;
+  picY = appHeight*1/8;
+  picWidth = appWidth*1/8;
+  picHeight = appHeight*1/8;
+
+  pic = loadImage("/imagesUsed/2.jpg");
+
+  rect(picX, picY, picWidth, picHeight);
+
 
   frameRate(1);
 
@@ -46,7 +58,9 @@ void setup() {
 void draw() {
   background(255); // Clear the background
 
-  int milliseconds = millis();
+  image(pic, picX, picY, picWidth, picHeight);
+
+    int milliseconds = millis();
   s = milliseconds / 1000;
 
   // Draw rectangles
